@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>AR Cars Showroom</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <style>
+        #ar-scene {
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <a-scene id="ar-scene" embedded arjs="sourceType: webcam; trackingMethod: best; debugUIEnabled: false;">
+
+        <!-- Assets -->
+        <a-assets>
+            <a-asset-item id="audiModel1" src="gw4c6lw7or28-AudiR8/Audi R8/Render/Audi R8-2.png"></a-asset-item>
+            <a-asset-item id="audiModel2" src="gw4c6lw7or28-AudiR8/Audi R8/Render/Audi R8.png"></a-asset-item>
+        </a-assets>
+
+        <!-- AR Marker -->
+        <a-marker preset="hiro" cursor="rayOrigin: mouse">
+            <a-entity gltf-model="#audiModel1" scale="0.5 0.5 0.5" position="-0.1 0 0"></a-entity>
+            <a-entity gltf-model="#audiModel2" scale="0.5 0.5 0.5" position="2 0 0"></a-entity>
+        </a-marker>
+
+        <!-- Camera and lighting setup -->
+        <a-entity camera></a-entity>
+        <a-light type="ambient" position="0 5 0" intensity="0.5"></a-light>
+    </a-scene>
+    <a-scene id="ar-scene" embedded arjs="sourceType: webcam; trackingMethod: best; debugUIEnabled: false;">
+
+        <!-- Assets -->
+        <a-assets>
+            <a-entity gltf-model="#audiModel1" scale="0.5 0.5 0.5" position="-0.1 0 0"></a-entity>
+            <a-entity gltf-model="#audiModel2" scale="0.5 0.5 0.5" position="2 0 0"></a-entity>
+        </a-assets>
+        <a-entity>
+            <a-assets  gltf-model="@pattern-marker.png" scale="0.5 0.5 0.5" position="-0.1 0 0"></a-entity>
+            <a-entity gltf-model="@pattern-marker.png(1,2,3,4,5,6,7,8,9)" scale="0.5 0.5 0.5" position="2 0 0"></a-entity>
+        </a-assets>
+
+        <!-- AR Marker -->
+        <a-marker preset="hiro" cursor="rayOrigin: mouse">
+            <a-entity gltf-model="#audiModel1" scale="0.5 0.5 0.5" position="-0.1 0 0"></a-entity>
+            <a-entity gltf-model="#audiModel2" scale="0.5 0.5 0.5" position="2 0 0"></a-entity>
+        </a-marker>
+
+        <!-- Camera and lighting setup -->
+        <a-entity camera></a-entity>
+        <a-light type="ambient" position="0 5 0" intensity="0.5"></a-light>
+    </a-scene>
+</body>
+
+</html>
+    
